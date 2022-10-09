@@ -8,6 +8,7 @@
     "start": "cd server && node server.js",
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
+    "install": "cd client && npm install",
     "client": "cd client && npm start"
   },
   "keywords": [],
@@ -19,9 +20,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
-    "nodemon": "^2.0.20",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "nodemon": "^2.0.20"
   },
   "engines": {
     "node": "16.16.0"
