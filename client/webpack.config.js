@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = () => {
   return {
@@ -37,10 +38,11 @@ module.exports = () => {
           },
         ],
       }),
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
-      }),
+      new WorkboxPlugin.GenerateSW(),
+      // new InjectManifest({
+      //   swSrc: './src-sw.js',
+      //   swDest: 'src-sw.js',
+      // }),
     ],
 
     module: {
